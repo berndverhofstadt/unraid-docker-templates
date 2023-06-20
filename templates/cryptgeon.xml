@@ -23,12 +23,12 @@ https://cryptgeon.nicco.io/&#xD;
 &#xD;
 NOTES&#xD;
 &#x2022; HTTPS certificate (NPM/Nginx) is required to use this service, otherwise browsers will not support the cryptographic functions.&#xD;
-&#x2022; Memcached is required to be already running as a separate container, as it is used for caching the information in memory (nothing is saved locally).&#xD;
+&#x2022; Redis is required to be already running as a separate container, as it is used for caching the information in memory (nothing is saved locally).&#xD;
 &#xD;
 VERSION&#xD;
 1.0 (2021-12-24)</Overview>
   <Category>Cloud: Productivity: Security: Tools: Network:Web Network:Messenger</Category>
-  <WebUI>http://[IP]:[PORT:5000]</WebUI>
+  <WebUI>http://[IP]:[PORT:8000]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/SmartPhoneLover/unraid-docker-templates/main/templates/icons/cryptgeon.png</Icon>
   <ExtraParams/>
@@ -37,9 +37,9 @@ VERSION&#xD;
   <DateInstalled>1640350909</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Requires>&#x2022; Memcached &#xD;
+  <Requires>&#x2022; Redis &#xD;
 &#x2022; HTTPS certificate (NPM/Nginx)</Requires>
   <Config Name="WebUI" Target="5000" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">5000</Config>
-  <Config Name="MEMCACHE" Target="MEMCACHE" Default="" Mode="" Description="Memcached connection (ip_server:port)" Type="Variable" Display="always" Required="true" Mask="false">ip_server:11211</Config>
+  <Config Name="REDIS" Target="REDIS" Default="" Mode="" Description="Redis connection (redis://ip_server:port/)" Type="Variable" Display="always" Required="true" Mask="false">redis://ip_server:6379</Config>
   <Config Name="SIZE_LIMIT" Target="SIZE_LIMIT" Default="" Mode="" Description="Max size body (default: 1kiB)" Type="Variable" Display="advanced" Required="false" Mask="false">1KiB</Config>
 </Container>
